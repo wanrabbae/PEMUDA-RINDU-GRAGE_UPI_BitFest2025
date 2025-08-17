@@ -30,7 +30,9 @@
     <header class="main-header">
       <div class="container">
         <div class="logo">
-          <img src="assets/cic.png" alt="UCIC" />
+          <a href="#">
+            <img src="assets/cic.png" alt="UCIC" />
+          </a>
         </div>
         <nav class="main-nav">
           <a href="#beranda">Beranda</a>
@@ -113,15 +115,16 @@
         <!-- Heading & Description -->
         <div class="why">
           <h2>Mengapa Pilih UCIC?</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+          <h3>
+            Di Universitas Catur Insan Cendekia (UCIC), kami percaya pendidikan
+            lebih dari sekadar gelar. Kami berkomitmen untuk membentuk para
+            pemimpin, inovator, dan profesional berkarakter yang tidak hanya
+            siap kerja, tetapi juga siap menghadapi tantangan global. Dengan
+            kurikulum yang relevan dengan industri dan lingkungan belajar yang
+            kolaboratif, kami mendedikasikan diri untuk menjadi mitra perjalanan
+            sukses Anda. Bergabunglah dengan komunitas cendekia kami dan temukan
+            potensi terbaik dalam diri Anda.
+          </h3>
         </div>
       </div>
 
@@ -144,7 +147,367 @@
       </div>
     </section>
 
-    <section class=""></section>
+    <section class="temukan-panggilan">
+      <div class="container">
+        <h2 class="tp-title">Temukan Panggilanmu di Sini</h2>
+
+        <!-- Filter Tabs -->
+        <div
+          class="tp-filters"
+          role="tablist"
+          aria-label="Filter Program Studi"
+        >
+          <button
+            class="tp-filter active"
+            data-filter="all"
+            role="tab"
+            aria-selected="true"
+          >
+            Semua
+          </button>
+          <button
+            class="tp-filter"
+            data-filter="fti"
+            data-intro="Selamat datang di pusat inovasi teknologi. Di sini, kami mengubah kode dan data menjadi solusi masa depan. Siap menjadi arsitek digital selanjutnya?"
+            role="tab"
+            aria-selected="false"
+          >
+            FTI
+          </button>
+          <button
+            class="tp-filter"
+            data-filter="feb"
+            data-intro="Masuki dunia bisnis yang dinamis. Asah jiwa wirausaha dan strategi manajerial Anda untuk menjadi pemimpin inovatif di era persaingan global."
+            role="tab"
+            aria-selected="false"
+          >
+            FEB
+          </button>
+          <button
+            class="tp-filter"
+            data-filter="olahraga"
+            data-intro="Lebih dari sekadar hobi. Kami memadukan sains dan manajemen untuk mengubah passion olahraga Anda menjadi sebuah profesi yang menjanjikan."
+            role="tab"
+            aria-selected="false"
+          >
+            Olahraga
+          </button>
+        </div>
+
+        <h3 class="tp-intro">
+          Kami menawarkan berbagai program diploma dan sarjana yang berfokus
+          pada inovasi dan kebutuhan industri. Setiap program didukung oleh
+          dosen ahli dan fasilitas modern untuk memastikan pengalaman belajar
+          terbaik. Temukan program yang tepat untuk Anda di bawah ini.
+        </h3>
+
+        <!-- Programs Grid -->
+        <div class="tp-grid" id="programGrid">
+          <!-- Example Cards (adjust / duplicate as needed) -->
+          <article class="tp-card" data-category="fti">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero1.jpeg"
+                alt="S1 Teknik Informatika"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Teknik Informatika</h3>
+              <p>
+                Program studi yang mempersiapkan mahasiswa mengembangkan solusi
+                perangkat lunak inovatif & berkelanjutan.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="fti">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero2.jpeg"
+                alt="S1 Sistem Informasi"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Sistem Informasi</h3>
+              <p>
+                Fokus pada integrasi proses bisnis dan teknologi informasi untuk
+                pengambilan keputusan.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="fti">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero3.jpeg"
+                alt="S1 Desain Komunikasi Visual"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Desain Komunikasi Visual</h3>
+              <p>
+                Mengasah kreativitas visual & strategi komunikasi melalui media
+                digital dan cetak.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="fti">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero1.jpeg"
+                alt="D3 Manajemen Informatika"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>D3 Manajemen Informatika</h3>
+              <p>
+                Program diploma aplikatif yang siap kerja di bidang operasional
+                TI dan administrasi data.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img src="assets/hero2.jpeg" alt="S1 Akuntansi" loading="lazy" />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Akuntansi</h3>
+              <p>
+                Membangun kompetensi pelaporan keuangan, audit, dan tata kelola
+                berbasis teknologi.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero3.jpeg"
+                alt="S1 Manajemen Reguler"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Manajemen Reguler</h3>
+              <p>
+                Fokus pengembangan kompetensi manajerial, pemasaran, SDM, dan
+                kewirausahaan.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero1.jpeg"
+                alt="S1 Manajemen Karyawan"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Manajemen Karyawan</h3>
+              <p>
+                Kelas karyawan fleksibel untuk profesional yang ingin
+                meningkatkan kompetensi manajerial.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero2.jpeg"
+                alt="S1 Manajemen RPL"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Manajemen RPL</h3>
+              <p>
+                Rekognisi Pembelajaran Lampau untuk percepatan penyelesaian
+                studi manajemen.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+        </div>
+        <!-- Grid sekunder agar 3 card khusus center -->
+        <div class="tp-grid-secondary" id="programGrid2">
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero3.jpeg"
+                alt="S1 Bisnis Digital"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Bisnis Digital</h3>
+              <p>
+                Strategi bisnis modern, analitik, e-commerce & inovasi model
+                digital.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="feb">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero1.jpeg"
+                alt="D3 Manajemen Bisnis"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>D3 Manajemen Bisnis</h3>
+              <p>
+                Diploma aplikatif siap kerja di operasional, administrasi &
+                layanan.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+          <article class="tp-card" data-category="olahraga">
+            <div class="tp-card-media">
+              <img
+                src="assets/hero2.jpeg"
+                alt="S1 Pendidikan Kepelatihan Olahraga"
+                loading="lazy"
+              />
+            </div>
+            <div class="tp-card-body">
+              <h3>S1 Pendidikan Kepelatihan Olahraga</h3>
+              <p>
+                Mempersiapkan pelatih profesional berbasis sport science &
+                prestasi.
+              </p>
+              <button class="tp-card-btn">Selengkapnya</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mitra-industri" id="mitra">
+      <div class="mi-header container">
+        <h2>Dipercaya oleh Puluhan<br />Perusahaan Ternama</h2>
+        <h3>
+          Kurikulum kami didesain bersama para praktisi, memastikan materi
+          selalu relevan dengan kebutuhan industri dan mudah diterapkan di dunia
+          kerja.
+        </h3>
+      </div>
+      <div class="mi-carousel" aria-label="Mitra Industri (berjalan otomatis)">
+        <div class="mi-track">
+          <!-- Satu set item -->
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/21.png"
+              alt="Century 21"
+              loading="lazy"
+              title="Century 21"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/ef.png"
+              alt="Mitra EF"
+              loading="lazy"
+              title="English First"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/esda.png"
+              alt="ESDA"
+              loading="lazy"
+              title="ESDA"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/pb.jpg"
+              alt="Pelita Bangsa"
+              loading="lazy"
+              title="Pelita Bangsa"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/yh.png"
+              alt="Yayasan Harapanku"
+              loading="lazy"
+              title="Yayasan Harapanku"
+            />
+          </div>
+          <!-- Duplikasi untuk loop mulus -->
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/21.png"
+              alt="Century 21"
+              aria-hidden="true"
+              loading="lazy"
+              title="Century 21"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/ef.png"
+              alt="English First"
+              aria-hidden="true"
+              loading="lazy"
+              title="English First"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/esda.png"
+              alt="ESDA"
+              aria-hidden="true"
+              loading="lazy"
+              title="ESDA"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/pb.jpg"
+              alt="Pelita Bangsa"
+              aria-hidden="true"
+              loading="lazy"
+              title="Pelita Bangsa"
+            />
+          </div>
+          <div class="mi-item logo-only">
+            <img
+              src="assets/mitra/yh.png"
+              alt="Yayasan Harapanku"
+              aria-hidden="true"
+              loading="lazy"
+              title="Yayasan Harapanku"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="kehidupan-mahasiswa"></section>
+
+    <!-- Back To Top Button -->
+    <button
+      id="backToTop"
+      class="back-to-top"
+      aria-label="Kembali ke atas"
+      title="Kembali ke atas"
+    >
+      ▲
+    </button>
 
     <script src="script.js"></script>
   </body>

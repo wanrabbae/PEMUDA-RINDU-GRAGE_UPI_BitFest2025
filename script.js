@@ -71,6 +71,27 @@ window.addEventListener('scroll', function () {
   }
 });
 
+// Back To Top button show when top-header tidak terlihat
+const backBtn = document.getElementById('backToTop');
+const topHeader = document.querySelector('.top-header');
+function toggleBackBtn(){
+  if(!backBtn || !topHeader) return;
+  const rect = topHeader.getBoundingClientRect();
+  // jika bawah top header sudah di atas viewport (rect.bottom < 0) maka tampilkan
+  if(rect.bottom < 0){
+    backBtn.classList.add('show');
+  } else {
+    backBtn.classList.remove('show');
+  }
+}
+window.addEventListener('scroll', toggleBackBtn, { passive:true });
+window.addEventListener('load', toggleBackBtn);
+if(backBtn){
+  backBtn.addEventListener('click', () => {
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+}
+
 // Animated counters
 function animateCounter(el, duration = 1500) {
   const target = +el.dataset.target || 0;
@@ -113,3 +134,104 @@ if (counters.length) {
 
   counters.forEach(c => obs.observe(c));
 }
+
+// Program filter (Temukan Panggilanmu)
+const filterButtons = document.querySelectorAll('.tp-filter');
+const programCards = document.querySelectorAll('.tp-card');
+// cards dalam grid sekunder otomatis termasuk di NodeList di atas.
+const primaryGrid = document.getElementById('programGrid');
+const secondaryGrid = document.getElementById('programGrid2');
+// Simpan referensi asli urutan card sekunder untuk restore
+const secondaryOriginal = secondaryGrid ? Array.from(secondaryGrid.children) : [];
+let merged = false; // status apakah sudah digabung ke grid utama
+const tpIntroEl = document.querySelector('.tp-intro');
+const tpIntroDefault = tpIntroEl ? tpIntroEl.innerHTML : '';
+
+if (filterButtons.length) {
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      // update intro text
+      if(tpIntroEl){
+        const custom = btn.dataset.intro;
+        if(filter === 'all' || !custom){
+          tpIntroEl.innerHTML = tpIntroDefault;
+        } else {
+          tpIntroEl.textContent = custom; // plain text for safety
+        }
+      }
+
+      // Merge / restore secondary grid depending on filter
+      if(filter !== 'all') {
+        if(secondaryGrid && primaryGrid && !merged){
+          secondaryOriginal.forEach(card => primaryGrid.appendChild(card));
+          secondaryGrid.style.display = 'none';
+          merged = true;
+        }
+      } else {
+        if(secondaryGrid && primaryGrid && merged){
+          // kembalikan card ke container sekunder (tetap urutan asli)
+            secondaryOriginal.forEach(card => secondaryGrid.appendChild(card));
+          secondaryGrid.style.display = '';
+          merged = false;
+        }
+      }
+      programCards.forEach(card => {
+        const cat = card.dataset.category;
+        const show = filter === 'all' || cat === filter;
+        if (show) {
+          card.classList.remove('hidden');
+          card.style.animation = 'tpFade .35s ease 0s both';
+        } else {
+          card.classList.add('hidden');
+          card.style.animation = '';
+        }
+      });
+      // optional: scroll into view if user jauh ke bawah
+      const grid = document.getElementById('programGrid');
+      if (grid) {
+        const rect = grid.getBoundingClientRect();
+        if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
+          grid.scrollIntoView({ behavior:'smooth', block:'start' });
+        }
+      }
+    });
+  });
+}
+
+// Simple keyframe injection for fade (only once)
+if (!document.getElementById('tpKeyframes')) {
+  const style = document.createElement('style');
+  style.id = 'tpKeyframes';
+  style.textContent = '@keyframes tpFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}';
+  document.head.appendChild(style);
+}
+
+// Mitra Industri carousel ensure seamless loop by duplicating set if needed
+(function initMitraCarousel(){
+  const track = document.querySelector('.mi-track');
+  if(!track) return;
+  const items = Array.from(track.children);
+  // If total width less than twice viewport, clone items until >= 2x for smooth scroll
+  function ensureLength(){
+    const vw = window.innerWidth;
+    let total = track.scrollWidth;
+    let safety = 0;
+    while(total < vw * 2 && safety < 4){
+      items.forEach(it=>{
+        const clone = it.cloneNode(true);
+        clone.setAttribute('aria-hidden','true');
+        track.appendChild(clone);
+      });
+      total = track.scrollWidth;
+      safety++;
+    }
+  }
+  ensureLength();
+  window.addEventListener('resize', ()=>{
+    // no shrinking cleanup to keep logic simple
+    ensureLength();
+  });
+})();
