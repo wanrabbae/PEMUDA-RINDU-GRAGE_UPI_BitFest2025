@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 /* Top Header */
@@ -112,7 +112,7 @@ body {
 }
 
 .main-nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -5px;
   left: 0;
@@ -215,6 +215,208 @@ body {
 
 .indicator.active {
   background: white;
+}
+
+/* Sambutan Section */
+.sambutan {
+  padding: 70px 0 0;
+  background: #fff;
+  position: relative;
+}
+
+.sambutan .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px 60px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.feature-item {
+  text-align: center;
+  flex: 1 1 160px;
+  min-width: 140px;
+}
+
+.feature-thumb {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 14px;
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.feature-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Counter variant */
+.count-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0b3f7d, #0a65c7);
+  color: #fff;
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: 1px;
+}
+
+.counter {
+  display: inline-block;
+}
+
+.feature-item p {
+  font-weight: 600;
+  line-height: 1.3;
+  font-size: 15px;
+}
+
+.feature-item:hover .feature-thumb {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.why h2 {
+  font-size: 36px;
+  margin-bottom: 28px;
+}
+.why p {
+  line-height: 1.6;
+  font-size: 16px;
+  max-width: 1000px;
+}
+
+/* Stats Band (stripe passes through vertical center of cards) */
+.stats-band {
+  --stripe-color: #022543;
+  --stripe-height: 78px; /* thickness of blue stripe */
+  --card-gap: 80px;
+  --card-width: 250px;
+  --card-radius: 26px;
+  --card-padding-y: 26px;
+  --card-padding-x: 34px;
+  --vertical-offset: -10px; /* geser keseluruhan kartu & stripe ke atas (+/-) */
+
+  background: var(--stripe-color);
+  margin: 70px auto 0;
+  height: var(--stripe-height);
+  position: relative;
+  overflow: visible;
+  transform: translateY(var(--vertical-offset));
+}
+
+.stats-wrapper {
+  max-width: clamp(320px, 92vw, 1280px);
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  gap: var(--card-gap);
+  justify-content: center;
+  flex-wrap: wrap;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /* center of stripe aligns to center of cards */
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stat-card {
+  background: #e2e2e2;
+  padding: var(--card-padding-y) var(--card-padding-x)
+    calc(var(--card-padding-y) + 4px);
+  border-radius: var(--card-radius);
+  width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  position: relative;
+  pointer-events: auto;
+  backdrop-filter: blur(2px);
+  transition: transform 0.35s, box-shadow 0.35s;
+  will-change: transform;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+}
+
+.stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+.stat-value {
+  font-size: 26px;
+  font-weight: 600;
+}
+.stat-value.accent {
+  color: #052c54;
+}
+
+/* Responsive Sambutan */
+@media (max-width: 992px) {
+  .why h2 {
+    font-size: 30px;
+  }
+  .stats-wrapper {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sambutan .container {
+    padding: 0 24px 40px;
+  }
+  .feature-grid {
+    justify-content: center;
+    gap: 25px;
+  }
+  .feature-thumb {
+    width: 110px;
+    height: 110px;
+  }
+  .why h2 {
+    font-size: 26px;
+  }
+  .why p {
+    font-size: 15px;
+  }
+  .stat-card {
+    width: 75%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-thumb {
+    width: 95px;
+    height: 95px;
+    border-radius: 22px;
+  }
+  .stat-card {
+    width: 90%;
+  }
 }
 
 /* Responsive */

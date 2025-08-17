@@ -70,3 +70,46 @@ window.addEventListener('scroll', function () {
     header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
   }
 });
+
+// Animated counters
+function animateCounter(el, duration = 1500) {
+  const target = +el.dataset.target || 0;
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const start = 0;
+  const startTime = performance.now();
+  function update(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+    const value = Math.floor(start + (target - start) * eased);
+    el.textContent = prefix + value.toLocaleString('id-ID') + suffix;
+    // autosize when too many chars
+    const len = el.textContent.length;
+    if (len > 5) {
+      el.style.fontSize = '36px';
+    }
+    if (len > 7) {
+      el.style.fontSize = '30px';
+    }
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// Trigger when in viewport once
+const counters = document.querySelectorAll('.counter');
+if (counters.length) {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (!el.dataset.played) {
+          animateCounter(el);
+          el.dataset.played = '1';
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => obs.observe(c));
+}
