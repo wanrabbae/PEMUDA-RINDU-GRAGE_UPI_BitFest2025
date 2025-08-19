@@ -115,7 +115,7 @@ body {
 .main-nav a {
   color: #333;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 16px;
   transition: color 0.3s;
   position: relative;
@@ -314,6 +314,7 @@ body {
 .why h3 {
   text-align: justify;
   text-justify: inter-word;
+  line-height: 30px;
 }
 
 .why p {
@@ -325,12 +326,12 @@ body {
 /* Stats Band (stripe passes through vertical center of cards) */
 .stats-band {
   --stripe-color: #022543;
-  --stripe-height: 100px;
+  --stripe-height: 140px;
   /* thickness of blue stripe */
   --card-gap: 80px;
-  --card-width: 250px;
+  --card-width: 300px;
   --card-radius: 26px;
-  --card-padding-y: 26px;
+  --card-padding-y: 35px;
   --card-padding-x: 120px;
   --vertical-offset: -10px;
   /* geser keseluruhan kartu & stripe ke atas (+/-) */
@@ -385,7 +386,7 @@ body {
 }
 
 .stat-label {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -445,7 +446,6 @@ body {
 }
 
 .tp-intro {
-  max-width: 760px;
   margin: 0 auto 38px;
   text-align: center;
   line-height: 1.55;
@@ -920,11 +920,10 @@ h2 {
 .km-container h2 {
   margin: 0 0 20px;
   line-height: 1.15;
+  font-size: 36px;
 }
 
 .km-intro {
-  max-width: 760px;
-  font-size: 15px;
   line-height: 1.55;
   margin: 0 0 42px;
 }
@@ -984,7 +983,7 @@ h2 {
   bottom: 0;
   width: 100%;
   padding: 10px 16px 14px;
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 600;
   color: #fff;
   background: linear-gradient(180deg,
@@ -1095,7 +1094,7 @@ h2 {
   margin: 0 auto 60px;
   text-align: center;
   line-height: 1.55;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .jp-grid {
@@ -1114,7 +1113,7 @@ h2 {
 }
 
 .jp-photo {
-  width: 80%;
+  width: 60%;
   aspect-ratio: 1/1;
   border-radius: 34px;
   overflow: hidden;
@@ -1203,6 +1202,8 @@ h2 {
   padding: 20px;
   gap: 20px;
   color: #000;
+  margin-left: 70px;
+  margin-right: 70px;
 }
 
 .alumni-card img {
@@ -1248,9 +1249,10 @@ h2 {
   background: #f0f0f0;
   border: none;
   border-radius: 50%;
-  padding: 10px 14px;
+  padding: 12px 16px;
   cursor: pointer;
   font-size: 20px;
+  margin: 0 20px;
 }
 
 .alumni-slider .prev {
@@ -1286,7 +1288,12 @@ h2 {
 
 .berita-header h2 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.berita-header h3 {
+  font-weight: normal;
+  margin-bottom: 40px;
 }
 
 .berita-header .highlight {
@@ -1353,13 +1360,12 @@ h2 {
 
 .berita-text h3 {
   margin: 0;
-  font-size: 1rem;
+  font-size: 30px;
 }
 
 .berita-text .meta {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin-top: 5px;
-  color: #00f;
   /* bright blue like in screenshot */
 }
 
@@ -1600,4 +1606,8 @@ h2 {
   .jp-name {
     font-size: 19px;
   }
+}
+
+.highlight {
+  color: #003366;
 }

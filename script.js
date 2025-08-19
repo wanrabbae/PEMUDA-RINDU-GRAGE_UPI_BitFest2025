@@ -41,12 +41,12 @@ function autoSlide() {
 
 function resetInterval() {
   clearInterval(slideInterval);
-  slideInterval = setInterval(autoSlide, 2000);
+  slideInterval = setInterval(autoSlide, 5000);
 }
 
 // Initialize slider
 showSlide(slideIndex);
-slideInterval = setInterval(autoSlide, 2000);
+slideInterval = setInterval(autoSlide, 5000);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -189,14 +189,6 @@ if (filterButtons.length) {
           card.style.animation = '';
         }
       });
-      // optional: scroll into view if user jauh ke bawah
-      const grid = document.getElementById('programGrid');
-      if (grid) {
-        const rect = grid.getBoundingClientRect();
-        if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
-          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
     });
   });
 }
