@@ -7,9 +7,9 @@ Web ini merupakan hasil redesign dari website UCIC Cirebon (cic.ac.id). Redesign
 
 ### Screenshot Tampilan Website
 
-![Screenshot Tampilan Website](https://cdn.discordapp.com/attachments/1008921423915532368/1407210109633040575/Screenshot_2025-08-19_at_10.42.46.png?ex=68a5460a&is=68a3f48a&hm=91b8115f761936fe06d98d0c31f6414ef175a7a6aea19e0352e530acccd3fcf3&)
-![Screenshot Tampilan Website](https://cdn.discordapp.com/attachments/1008921423915532368/1407210110421434520/Screenshot_2025-08-19_at_10.43.11.png?ex=68a5460b&is=68a3f48b&hm=50377805fc163df7e3a2cb7e0159964ac4da6787bcd5655cc4ce01804ea227c7&)
-![Screenshot Tampilan Website](https://cdn.discordapp.com/attachments/1008921423915532368/1407210110849388564/Screenshot_2025-08-19_at_10.43.23.png?ex=68a5460b&is=68a3f48b&hm=587e209749a048e29471a1fefc3d1cf56f60c29df37ad69fb76ce0e71c4053e6&)
+![Screenshot Tampilan Website 1](https://res.cloudinary.com/touchme/image/upload/v1755575753/Screenshot_2025-08-19_at_10.42.46_fk5ccm.png)
+![Screenshot Tampilan Website 2](https://res.cloudinary.com/touchme/image/upload/v1755575727/Screenshot_2025-08-19_at_10.43.23_bi2i2w.png)
+![Screenshot Tampilan Website 3](https://res.cloudinary.com/touchme/image/upload/v1755575726/Screenshot_2025-08-19_at_10.43.11_bd7cit.png)
 
 > **Referensi:**  
 > [Website UCIC Cirebon (cic.ac.id)](https://cic.ac.id)
