@@ -74,21 +74,21 @@ window.addEventListener('scroll', function () {
 // Back To Top button show when top-header tidak terlihat
 const backBtn = document.getElementById('backToTop');
 const topHeader = document.querySelector('.top-header');
-function toggleBackBtn(){
-  if(!backBtn || !topHeader) return;
+function toggleBackBtn() {
+  if (!backBtn || !topHeader) return;
   const rect = topHeader.getBoundingClientRect();
   // jika bawah top header sudah di atas viewport (rect.bottom < 0) maka tampilkan
-  if(rect.bottom < 0){
+  if (rect.bottom < 0) {
     backBtn.classList.add('show');
   } else {
     backBtn.classList.remove('show');
   }
 }
-window.addEventListener('scroll', toggleBackBtn, { passive:true });
+window.addEventListener('scroll', toggleBackBtn, { passive: true });
 window.addEventListener('load', toggleBackBtn);
-if(backBtn){
+if (backBtn) {
   backBtn.addEventListener('click', () => {
-    window.scrollTo({ top:0, behavior:'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
 
@@ -154,9 +154,9 @@ if (filterButtons.length) {
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       // update intro text
-      if(tpIntroEl){
+      if (tpIntroEl) {
         const custom = btn.dataset.intro;
-        if(filter === 'all' || !custom){
+        if (filter === 'all' || !custom) {
           tpIntroEl.innerHTML = tpIntroDefault;
         } else {
           tpIntroEl.textContent = custom; // plain text for safety
@@ -164,16 +164,16 @@ if (filterButtons.length) {
       }
 
       // Merge / restore secondary grid depending on filter
-      if(filter !== 'all') {
-        if(secondaryGrid && primaryGrid && !merged){
+      if (filter !== 'all') {
+        if (secondaryGrid && primaryGrid && !merged) {
           secondaryOriginal.forEach(card => primaryGrid.appendChild(card));
           secondaryGrid.style.display = 'none';
           merged = true;
         }
       } else {
-        if(secondaryGrid && primaryGrid && merged){
+        if (secondaryGrid && primaryGrid && merged) {
           // kembalikan card ke container sekunder (tetap urutan asli)
-            secondaryOriginal.forEach(card => secondaryGrid.appendChild(card));
+          secondaryOriginal.forEach(card => secondaryGrid.appendChild(card));
           secondaryGrid.style.display = '';
           merged = false;
         }
@@ -194,7 +194,7 @@ if (filterButtons.length) {
       if (grid) {
         const rect = grid.getBoundingClientRect();
         if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
-          grid.scrollIntoView({ behavior:'smooth', block:'start' });
+          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }
     });
@@ -210,19 +210,19 @@ if (!document.getElementById('tpKeyframes')) {
 }
 
 // Mitra Industri carousel ensure seamless loop by duplicating set if needed
-(function initMitraCarousel(){
+(function initMitraCarousel() {
   const track = document.querySelector('.mi-track');
-  if(!track) return;
+  if (!track) return;
   const items = Array.from(track.children);
   // If total width less than twice viewport, clone items until >= 2x for smooth scroll
-  function ensureLength(){
+  function ensureLength() {
     const vw = window.innerWidth;
     let total = track.scrollWidth;
     let safety = 0;
-    while(total < vw * 2 && safety < 4){
-      items.forEach(it=>{
+    while (total < vw * 2 && safety < 4) {
+      items.forEach(it => {
         const clone = it.cloneNode(true);
-        clone.setAttribute('aria-hidden','true');
+        clone.setAttribute('aria-hidden', 'true');
         track.appendChild(clone);
       });
       total = track.scrollWidth;
@@ -230,8 +230,65 @@ if (!document.getElementById('tpKeyframes')) {
     }
   }
   ensureLength();
-  window.addEventListener('resize', ()=>{
-    // no shrinking cleanup to keep logic simple
+  window.addEventListener('resize', () => {
     ensureLength();
   });
+
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.main-header');
+    if (window.scrollY > 20) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
 })();
+
+
+// ==================== Alumni Slider ====================
+let alumniIndex = 1;
+const alumniSlides = document.querySelectorAll('.alumni-slide');
+const alumniPrev = document.querySelector('.alumni-section .prev');
+const alumniNext = document.querySelector('.alumni-section .next');
+let alumniInterval;
+
+function showAlumniSlide(n) {
+  if (alumniSlides.length === 0) return;
+
+  if (n > alumniSlides.length) alumniIndex = 1;
+  if (n < 1) alumniIndex = alumniSlides.length;
+
+  alumniSlides.forEach(slide => slide.classList.remove('active'));
+  alumniSlides[alumniIndex - 1].classList.add('active');
+}
+
+function nextAlumniSlide() {
+  alumniIndex++;
+  showAlumniSlide(alumniIndex);
+  resetAlumniInterval();
+}
+
+function previousAlumniSlide() {
+  alumniIndex--;
+  showAlumniSlide(alumniIndex);
+  resetAlumniInterval();
+}
+
+function autoAlumniSlide() {
+  alumniIndex++;
+  showAlumniSlide(alumniIndex);
+}
+
+function resetAlumniInterval() {
+  clearInterval(alumniInterval);
+  alumniInterval = setInterval(autoAlumniSlide, 4000); // auto 4s
+}
+
+// Init Alumni Slider
+if (alumniSlides.length) {
+  showAlumniSlide(alumniIndex);
+  alumniInterval = setInterval(autoAlumniSlide, 4000);
+
+  if (alumniPrev) alumniPrev.addEventListener('click', previousAlumniSlide);
+  if (alumniNext) alumniNext.addEventListener('click', nextAlumniSlide);
+}

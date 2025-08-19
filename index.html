@@ -1,619 +1,636 @@
 <!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
-    <title>UCIC - Universitas Catur Insan Cendekia</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <!-- Top Header -->
-    <div class="top-header">
-      <div class="container">
-        <nav class="top-nav">
-          <a href="#pengumuman">Pengumuman</a>
-          <a href="#perpustakaan">Perpustakaan</a>
-          <a href="#berita">Berita</a>
-          <a href="#bpm">BPM</a>
-          <a href="#login">Login</a>
-          <a href="#" class="lang-switch" title="Ganti Bahasa">
-            <span role="img" aria-label="Bendera" style="font-size: 18px"
-              >🇮🇩 | 🇺🇸</span
-            >
-          </a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon" />
+  <title>UCIC - Universitas Catur Insan Cendekia</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Top Header -->
+  <div class="top-header">
+    <div class="container">
+      <nav class="top-nav">
+        <a href="#pengumuman">Pengumuman</a>
+        <a href="#perpustakaan">Perpustakaan</a>
+        <a href="#berita">Berita</a>
+        <a href="#bpm">BPM</a>
+        <a href="#login">Login</a>
+        <a href="#" class="lang-switch" title="Ganti Bahasa">
+          <span role="img" aria-label="Bendera" style="font-size: 18px">🇮🇩 | 🇺🇸</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <a href="#">
+          <img src="assets/cic.png" alt="UCIC" />
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="#beranda">Beranda</a>
+        <a href="#tentang-ucic">Tentang UCIC</a>
+        <a href="#fakultas">Fakultas</a>
+        <a href="#kegiatan">Kegiatan</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#pmb">PMB</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider">
+    <div class="slider-container">
+      <div class="slide active">
+        <img src="assets/hero1.jpeg" alt="" />
+      </div>
+      <div class="slide">
+        <img src="assets/hero2.jpeg" alt="" />
+      </div>
+      <div class="slide">
+        <img src="assets/hero3.jpeg" alt="" />
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="slider-nav prev" onclick="previousSlide()">‹</button>
+      <button class="slider-nav next" onclick="nextSlide()">›</button>
+
+      <!-- Indicators -->
+      <div class="slider-indicators">
+        <div class="indicator active" onclick="currentSlide(1)"></div>
+        <div class="indicator" onclick="currentSlide(2)"></div>
+        <div class="indicator" onclick="currentSlide(3)"></div>
+      </div>
+    </div>
+    <!-- end .slider-container (was previously unclosed) -->
+  </section>
+
+  <!-- Sambutan / Mengapa Pilih UCIC Section -->
+  <section class="sambutan" id="tentang-ucic">
+    <div class="container">
+      <!-- Feature Icons -->
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-thumb count-thumb" title="Jumlah Program Studi">
+            <span class="counter" data-target="11">0</span>
+          </div>
+          <p>Program<br />Studi</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-thumb count-thumb" title="Jumlah Mahasiswa Aktif">
+            <span class="counter" data-target="3000" data-suffix="+">0</span>
+          </div>
+          <p>Mahasiswa</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-thumb count-thumb" title="Persentase Lulusan Bekerja">
+            <span class="counter" data-target="95" data-suffix="%">0</span>
+          </div>
+          <p>Lulusan<br />Bekerja</p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-thumb count-thumb" title="Jumlah Mitra Industri">
+            <span class="counter" data-target="120" data-suffix="+">0</span>
+          </div>
+          <p>Mitra<br />Industri</p>
+        </div>
+      </div>
+
+      <!-- Heading & Description -->
+      <div class="why">
+        <h2>Mengapa Pilih UCIC?</h2>
+        <h3 style="font-weight: normal;">
+          Di Universitas Catur Insan Cendekia (UCIC), kami percaya pendidikan
+          lebih dari sekadar gelar. Kami berkomitmen untuk membentuk para
+          pemimpin, inovator, dan profesional berkarakter yang tidak hanya
+          siap kerja, tetapi juga siap menghadapi tantangan global. Dengan
+          kurikulum yang relevan dengan industri dan lingkungan belajar yang
+          kolaboratif, kami mendedikasikan diri untuk menjadi mitra perjalanan
+          sukses Anda. Bergabunglah dengan komunitas cendekia kami dan temukan
+          potensi terbaik dalam diri Anda.
+        </h3>
       </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
-      <div class="container">
-        <div class="logo">
-          <a href="#">
-            <img src="assets/cic.png" alt="UCIC" />
-          </a>
+    <!-- Statistics Band -->
+    <div class="stats-band">
+      <div class="stats-wrapper">
+        <div class="stat-card">
+          <span class="stat-label">UCIC Terakreditasi</span>
+          <span class="stat-value accent">UNGGUL</span>
         </div>
-        <nav class="main-nav">
-          <a href="#beranda">Beranda</a>
-          <a href="#tentang-ucic">Tentang UCIC</a>
-          <a href="#fakultas">Fakultas</a>
-          <a href="#kegiatan">Kegiatan</a>
-          <a href="#galeri">Galeri</a>
-          <a href="#pmb">PMB</a>
-        </nav>
-      </div>
-    </header>
-
-    <!-- Hero Slider -->
-    <section class="hero-slider">
-      <div class="slider-container">
-        <div class="slide active">
-          <img src="assets/hero1.jpeg" alt="" />
+        <div class="stat-card">
+          <span class="stat-label">Prodi Terakreditasi Nasional</span>
+          <span class="stat-value">69</span>
         </div>
-        <div class="slide">
-          <img src="assets/hero2.jpeg" alt="" />
-        </div>
-        <div class="slide">
-          <img src="assets/hero3.jpeg" alt="" />
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="slider-nav prev" onclick="previousSlide()">‹</button>
-        <button class="slider-nav next" onclick="nextSlide()">›</button>
-
-        <!-- Indicators -->
-        <div class="slider-indicators">
-          <div class="indicator active" onclick="currentSlide(1)"></div>
-          <div class="indicator" onclick="currentSlide(2)"></div>
-          <div class="indicator" onclick="currentSlide(3)"></div>
+        <div class="stat-card">
+          <span class="stat-label">QS World University Rankings</span>
+          <span class="stat-value accent">#1945</span>
         </div>
       </div>
-      <!-- end .slider-container (was previously unclosed) -->
-    </section>
+    </div>
+  </section>
 
-    <!-- Sambutan / Mengapa Pilih UCIC Section -->
-    <section class="sambutan" id="tentang-ucic">
-      <div class="container">
-        <!-- Feature Icons -->
-        <div class="feature-grid">
-          <div class="feature-item">
-            <div class="feature-thumb count-thumb" title="Jumlah Program Studi">
-              <span class="counter" data-target="11">0</span>
-            </div>
-            <p>Program<br />Studi</p>
-          </div>
-          <div class="feature-item">
-            <div
-              class="feature-thumb count-thumb"
-              title="Jumlah Mahasiswa Aktif"
-            >
-              <span class="counter" data-target="3000" data-suffix="+">0</span>
-            </div>
-            <p>Mahasiswa</p>
-          </div>
-          <div class="feature-item">
-            <div
-              class="feature-thumb count-thumb"
-              title="Persentase Lulusan Bekerja"
-            >
-              <span class="counter" data-target="95" data-suffix="%">0</span>
-            </div>
-            <p>Lulusan<br />Bekerja</p>
-          </div>
-          <div class="feature-item">
-            <div
-              class="feature-thumb count-thumb"
-              title="Jumlah Mitra Industri"
-            >
-              <span class="counter" data-target="120" data-suffix="+">0</span>
-            </div>
-            <p>Mitra<br />Industri</p>
-          </div>
-        </div>
+  <section class="temukan-panggilan">
+    <div class="container">
+      <h2 class="tp-title">Temukan Panggilanmu di Sini</h2>
 
-        <!-- Heading & Description -->
-        <div class="why">
-          <h2>Mengapa Pilih UCIC?</h2>
-          <h3>
-            Di Universitas Catur Insan Cendekia (UCIC), kami percaya pendidikan
-            lebih dari sekadar gelar. Kami berkomitmen untuk membentuk para
-            pemimpin, inovator, dan profesional berkarakter yang tidak hanya
-            siap kerja, tetapi juga siap menghadapi tantangan global. Dengan
-            kurikulum yang relevan dengan industri dan lingkungan belajar yang
-            kolaboratif, kami mendedikasikan diri untuk menjadi mitra perjalanan
-            sukses Anda. Bergabunglah dengan komunitas cendekia kami dan temukan
-            potensi terbaik dalam diri Anda.
-          </h3>
-        </div>
+      <!-- Filter Tabs -->
+      <div class="tp-filters" role="tablist" aria-label="Filter Program Studi">
+        <button class="tp-filter active" data-filter="all" role="tab" aria-selected="true">
+          Semua
+        </button>
+        <button class="tp-filter" data-filter="fti"
+          data-intro="Selamat datang di pusat inovasi teknologi. Di sini, kami mengubah kode dan data menjadi solusi masa depan. Siap menjadi arsitek digital selanjutnya?"
+          role="tab" aria-selected="false">
+          FTI
+        </button>
+        <button class="tp-filter" data-filter="feb"
+          data-intro="Masuki dunia bisnis yang dinamis. Asah jiwa wirausaha dan strategi manajerial Anda untuk menjadi pemimpin inovatif di era persaingan global."
+          role="tab" aria-selected="false">
+          FEB
+        </button>
+        <button class="tp-filter" data-filter="olahraga"
+          data-intro="Lebih dari sekadar hobi. Kami memadukan sains dan manajemen untuk mengubah passion olahraga Anda menjadi sebuah profesi yang menjanjikan."
+          role="tab" aria-selected="false">
+          Olahraga
+        </button>
       </div>
 
-      <!-- Statistics Band -->
-      <div class="stats-band">
-        <div class="stats-wrapper">
-          <div class="stat-card">
-            <span class="stat-label">UCIC Terakreditasi</span>
-            <span class="stat-value accent">UNGGUL</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-label">Prodi Terakreditasi Nasional</span>
-            <span class="stat-value">69</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-label">QS World University Rankings</span>
-            <span class="stat-value accent">#1945</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      <h3 class="tp-intro" style="font-weight: normal;">
+        Kami menawarkan berbagai program diploma dan sarjana yang berfokus
+        pada inovasi dan kebutuhan industri. Setiap program didukung oleh
+        dosen ahli dan fasilitas modern untuk memastikan pengalaman belajar
+        terbaik. Temukan program yang tepat untuk Anda di bawah ini.
+      </h3>
 
-    <section class="temukan-panggilan">
-      <div class="container">
-        <h2 class="tp-title">Temukan Panggilanmu di Sini</h2>
-
-        <!-- Filter Tabs -->
-        <div
-          class="tp-filters"
-          role="tablist"
-          aria-label="Filter Program Studi"
-        >
-          <button
-            class="tp-filter active"
-            data-filter="all"
-            role="tab"
-            aria-selected="true"
-          >
-            Semua
-          </button>
-          <button
-            class="tp-filter"
-            data-filter="fti"
-            data-intro="Selamat datang di pusat inovasi teknologi. Di sini, kami mengubah kode dan data menjadi solusi masa depan. Siap menjadi arsitek digital selanjutnya?"
-            role="tab"
-            aria-selected="false"
-          >
-            FTI
-          </button>
-          <button
-            class="tp-filter"
-            data-filter="feb"
-            data-intro="Masuki dunia bisnis yang dinamis. Asah jiwa wirausaha dan strategi manajerial Anda untuk menjadi pemimpin inovatif di era persaingan global."
-            role="tab"
-            aria-selected="false"
-          >
-            FEB
-          </button>
-          <button
-            class="tp-filter"
-            data-filter="olahraga"
-            data-intro="Lebih dari sekadar hobi. Kami memadukan sains dan manajemen untuk mengubah passion olahraga Anda menjadi sebuah profesi yang menjanjikan."
-            role="tab"
-            aria-selected="false"
-          >
-            Olahraga
-          </button>
-        </div>
-
-        <h3 class="tp-intro">
-          Kami menawarkan berbagai program diploma dan sarjana yang berfokus
-          pada inovasi dan kebutuhan industri. Setiap program didukung oleh
-          dosen ahli dan fasilitas modern untuk memastikan pengalaman belajar
-          terbaik. Temukan program yang tepat untuk Anda di bawah ini.
-        </h3>
-
-        <!-- Programs Grid -->
-        <div class="tp-grid" id="programGrid">
-          <!-- Example Cards (adjust / duplicate as needed) -->
-          <article class="tp-card" data-category="fti">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero1.jpeg"
-                alt="S1 Teknik Informatika"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Teknik Informatika</h3>
-              <p>
-                Program studi yang mempersiapkan mahasiswa mengembangkan solusi
-                perangkat lunak inovatif & berkelanjutan.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="fti">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero2.jpeg"
-                alt="S1 Sistem Informasi"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Sistem Informasi</h3>
-              <p>
-                Fokus pada integrasi proses bisnis dan teknologi informasi untuk
-                pengambilan keputusan.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="fti">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero3.jpeg"
-                alt="S1 Desain Komunikasi Visual"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Desain Komunikasi Visual</h3>
-              <p>
-                Mengasah kreativitas visual & strategi komunikasi melalui media
-                digital dan cetak.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="fti">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero1.jpeg"
-                alt="D3 Manajemen Informatika"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>D3 Manajemen Informatika</h3>
-              <p>
-                Program diploma aplikatif yang siap kerja di bidang operasional
-                TI dan administrasi data.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img src="assets/hero2.jpeg" alt="S1 Akuntansi" loading="lazy" />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Akuntansi</h3>
-              <p>
-                Membangun kompetensi pelaporan keuangan, audit, dan tata kelola
-                berbasis teknologi.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero3.jpeg"
-                alt="S1 Manajemen Reguler"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Manajemen Reguler</h3>
-              <p>
-                Fokus pengembangan kompetensi manajerial, pemasaran, SDM, dan
-                kewirausahaan.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero1.jpeg"
-                alt="S1 Manajemen Karyawan"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Manajemen Karyawan</h3>
-              <p>
-                Kelas karyawan fleksibel untuk profesional yang ingin
-                meningkatkan kompetensi manajerial.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero2.jpeg"
-                alt="S1 Manajemen RPL"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Manajemen RPL</h3>
-              <p>
-                Rekognisi Pembelajaran Lampau untuk percepatan penyelesaian
-                studi manajemen.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-        </div>
-        <!-- Grid sekunder agar 3 card khusus center -->
-        <div class="tp-grid-secondary" id="programGrid2">
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero3.jpeg"
-                alt="S1 Bisnis Digital"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Bisnis Digital</h3>
-              <p>
-                Strategi bisnis modern, analitik, e-commerce & inovasi model
-                digital.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="feb">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero1.jpeg"
-                alt="D3 Manajemen Bisnis"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>D3 Manajemen Bisnis</h3>
-              <p>
-                Diploma aplikatif siap kerja di operasional, administrasi &
-                layanan.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-          <article class="tp-card" data-category="olahraga">
-            <div class="tp-card-media">
-              <img
-                src="assets/hero2.jpeg"
-                alt="S1 Pendidikan Kepelatihan Olahraga"
-                loading="lazy"
-              />
-            </div>
-            <div class="tp-card-body">
-              <h3>S1 Pendidikan Kepelatihan Olahraga</h3>
-              <p>
-                Mempersiapkan pelatih profesional berbasis sport science &
-                prestasi.
-              </p>
-              <button class="tp-card-btn">Selengkapnya</button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="mitra-industri" id="mitra">
-      <div class="mi-header container">
-        <h2>Dipercaya oleh Puluhan<br />Perusahaan Ternama</h2>
-        <h3>
-          Kurikulum kami didesain bersama para praktisi, memastikan materi
-          selalu relevan dengan kebutuhan industri dan mudah diterapkan di dunia
-          kerja.
-        </h3>
-      </div>
-      <div class="mi-carousel" aria-label="Mitra Industri (berjalan otomatis)">
-        <div class="mi-track">
-          <!-- Satu set item -->
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/21.png"
-              alt="Century 21"
-              loading="lazy"
-              title="Century 21"
-            />
+      <!-- Programs Grid -->
+      <div class="tp-grid" id="programGrid">
+        <!-- Example Cards (adjust / duplicate as needed) -->
+        <article class="tp-card" data-category="fti">
+          <div class="tp-card-media">
+            <img src="assets/hero1.jpeg" alt="S1 Teknik Informatika" loading="lazy" />
           </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/ef.png"
-              alt="Mitra EF"
-              loading="lazy"
-              title="English First"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/esda.png"
-              alt="ESDA"
-              loading="lazy"
-              title="ESDA"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/pb.jpg"
-              alt="Pelita Bangsa"
-              loading="lazy"
-              title="Pelita Bangsa"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/yh.png"
-              alt="Yayasan Harapanku"
-              loading="lazy"
-              title="Yayasan Harapanku"
-            />
-          </div>
-          <!-- Duplikasi untuk loop mulus -->
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/21.png"
-              alt="Century 21"
-              aria-hidden="true"
-              loading="lazy"
-              title="Century 21"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/ef.png"
-              alt="English First"
-              aria-hidden="true"
-              loading="lazy"
-              title="English First"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/esda.png"
-              alt="ESDA"
-              aria-hidden="true"
-              loading="lazy"
-              title="ESDA"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/pb.jpg"
-              alt="Pelita Bangsa"
-              aria-hidden="true"
-              loading="lazy"
-              title="Pelita Bangsa"
-            />
-          </div>
-          <div class="mi-item logo-only">
-            <img
-              src="assets/mitra/yh.png"
-              alt="Yayasan Harapanku"
-              aria-hidden="true"
-              loading="lazy"
-              title="Yayasan Harapanku"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="kehidupan-mahasiswa" id="kehidupan">
-      <div class="km-container">
-        <h2>Kehidupan Mahasiswa UCIC</h2>
-        <h3 class="km-intro">
-          Mahasiswa mendapatkan pengalaman belajar yang relevan dengan kebutuhan
-          industri melalui proyek nyata, studi kasus, dan bimbingan praktisi,
-          sehingga siap menghadapi tantangan dunia kerja.
-        </h3>
-        <div class="km-grid">
-          <figure class="km-item km-item--auditorium">
-            <img
-              src="assets/hero1.jpeg"
-              alt="Auditorium kampus"
-              loading="lazy"
-            />
-            <figcaption>Auditorium</figcaption>
-          </figure>
-          <figure class="km-item km-item--rapat">
-            <img
-              src="assets/hero2.jpeg"
-              alt="Ruang rapat dan diskusi"
-              loading="lazy"
-            />
-            <figcaption>Ruang Rapat</figcaption>
-          </figure>
-          <figure class="km-item km-item--lab">
-            <img
-              src="assets/hero3.jpeg"
-              alt="Laboratorium komputer"
-              loading="lazy"
-            />
-            <figcaption>Lab. Komputer</figcaption>
-          </figure>
-          <figure class="km-item km-item--perpus">
-            <img
-              src="assets/hero2.jpeg"
-              alt="Perpustakaan kampus"
-              loading="lazy"
-            />
-            <figcaption>Perpustakaan</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="jejak-prestasi" id="prestasi">
-      <div class="jp-container">
-        <header class="jp-header">
-          <h2>Jejak Prestasi & Inovasi</h2>
-          <h3 class="jp-intro">
-            Prestasi adalah kebiasaan di UCIC. Kami bangga melihat mahasiswa,
-            dosen, dan alumni kami terus berinovasi dan menjadi juara di
-            bidangnya masing-masing. Berikut adalah beberapa kisah inspiratif
-            mereka.
-          </h3>
-        </header>
-        <div class="jp-grid">
-          <article class="jp-card">
-            <div class="jp-photo">
-              <img
-                src="assets/hero1.jpeg"
-                alt="Penerima hibah penelitian mengembangkan energi alternatif dari limbah kopi"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="jp-name">Arul Ganteng</h4>
-            <p class="jp-title">Peraih Hibah Penelitian Dikti</p>
-            <p class="jp-desc">
-              Meneliti pemanfaatan limbah kopi Cirebon sebagai sumber energi
-              alternatif ramah lingkungan.
+          <div class="tp-card-body">
+            <h3>S1 Teknik Informatika</h3>
+            <p>
+              Program studi yang mempersiapkan mahasiswa mengembangkan solusi
+              perangkat lunak inovatif & berkelanjutan.
             </p>
-          </article>
-          <article class="jp-card">
-            <div class="jp-photo">
-              <img
-                src="assets/hero2.jpeg"
-                alt="Founder startup KopiKoding menerima pendanaan tahap awal"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="jp-name">Arul Ganteng</h4>
-            <p class="jp-title">Founder Startup KopiKoding</p>
-            <p class="jp-desc">
-              Meraih pendanaan tahap awal untuk platform edukasi yang kini
-              digunakan ribuan pelajar.
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="fti">
+          <div class="tp-card-media">
+            <img src="assets/hero2.jpeg" alt="S1 Sistem Informasi" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Sistem Informasi</h3>
+            <p>
+              Fokus pada integrasi proses bisnis dan teknologi informasi untuk
+              pengambilan keputusan.
             </p>
-          </article>
-          <article class="jp-card">
-            <div class="jp-photo">
-              <img
-                src="assets/hero3.jpeg"
-                alt="Peraih juara hackaton nasional mengembangkan aplikasi AI untuk pertanian"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="jp-name">Arul Ganteng</h4>
-            <p class="jp-title">Juara 1 Hackaton Nasional 2025</p>
-            <p class="jp-desc">
-              Mengembangkan aplikasi berbasis AI untuk membantu petani
-              memprediksi gagal panen.
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="fti">
+          <div class="tp-card-media">
+            <img src="assets/hero3.jpeg" alt="S1 Desain Komunikasi Visual" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Desain Komunikasi Visual</h3>
+            <p>
+              Mengasah kreativitas visual & strategi komunikasi melalui media
+              digital dan cetak.
             </p>
-          </article>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="fti">
+          <div class="tp-card-media">
+            <img src="assets/hero1.jpeg" alt="D3 Manajemen Informatika" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>D3 Manajemen Informatika</h3>
+            <p>
+              Program diploma aplikatif yang siap kerja di bidang operasional
+              TI dan administrasi data.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero2.jpeg" alt="S1 Akuntansi" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Akuntansi</h3>
+            <p>
+              Membangun kompetensi pelaporan keuangan, audit, dan tata kelola
+              berbasis teknologi.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero3.jpeg" alt="S1 Manajemen Reguler" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Manajemen Reguler</h3>
+            <p>
+              Fokus pengembangan kompetensi manajerial, pemasaran, SDM, dan
+              kewirausahaan.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero1.jpeg" alt="S1 Manajemen Karyawan" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Manajemen Karyawan</h3>
+            <p>
+              Kelas karyawan fleksibel untuk profesional yang ingin
+              meningkatkan kompetensi manajerial.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero2.jpeg" alt="S1 Manajemen RPL" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Manajemen RPL</h3>
+            <p>
+              Rekognisi Pembelajaran Lampau untuk percepatan penyelesaian
+              studi manajemen.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+      </div>
+      <!-- Grid sekunder agar 3 card khusus center -->
+      <div class="tp-grid-secondary" id="programGrid2">
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero3.jpeg" alt="S1 Bisnis Digital" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Bisnis Digital</h3>
+            <p>
+              Strategi bisnis modern, analitik, e-commerce & inovasi model
+              digital.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="feb">
+          <div class="tp-card-media">
+            <img src="assets/hero1.jpeg" alt="D3 Manajemen Bisnis" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>D3 Manajemen Bisnis</h3>
+            <p>
+              Diploma aplikatif siap kerja di operasional, administrasi &
+              layanan.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+        <article class="tp-card" data-category="olahraga">
+          <div class="tp-card-media">
+            <img src="assets/hero2.jpeg" alt="S1 Pendidikan Kepelatihan Olahraga" loading="lazy" />
+          </div>
+          <div class="tp-card-body">
+            <h3>S1 Pendidikan Kepelatihan Olahraga</h3>
+            <p>
+              Mempersiapkan pelatih profesional berbasis sport science &
+              prestasi.
+            </p>
+            <button class="tp-card-btn">Selengkapnya</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mitra-industri" id="mitra">
+    <div class="mi-header container">
+      <h2>Dipercaya oleh Puluhan<br />Perusahaan Ternama</h2>
+      <h3 style="font-weight: normal;">
+        Kurikulum kami didesain bersama para praktisi, memastikan materi
+        selalu relevan dengan kebutuhan industri dan mudah diterapkan di dunia
+        kerja.
+      </h3>
+    </div>
+    <div class="mi-carousel" aria-label="Mitra Industri (berjalan otomatis)">
+      <div class="mi-track">
+        <!-- Satu set item -->
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/21.png" alt="Century 21" loading="lazy" title="Century 21" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/ef.png" alt="Mitra EF" loading="lazy" title="English First" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/esda.png" alt="ESDA" loading="lazy" title="ESDA" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/pb.jpg" alt="Pelita Bangsa" loading="lazy" title="Pelita Bangsa" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/yh.png" alt="Yayasan Harapanku" loading="lazy" title="Yayasan Harapanku" />
+        </div>
+        <!-- Duplikasi untuk loop mulus -->
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/21.png" alt="Century 21" aria-hidden="true" loading="lazy" title="Century 21" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/ef.png" alt="English First" aria-hidden="true" loading="lazy" title="English First" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/esda.png" alt="ESDA" aria-hidden="true" loading="lazy" title="ESDA" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/pb.jpg" alt="Pelita Bangsa" aria-hidden="true" loading="lazy" title="Pelita Bangsa" />
+        </div>
+        <div class="mi-item logo-only">
+          <img src="assets/mitra/yh.png" alt="Yayasan Harapanku" aria-hidden="true" loading="lazy"
+            title="Yayasan Harapanku" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Back To Top Button -->
-    <button
-      id="backToTop"
-      class="back-to-top"
-      aria-label="Kembali ke atas"
-      title="Kembali ke atas"
-    >
-      ▲
-    </button>
+  <section class="kehidupan-mahasiswa" id="kehidupan">
+    <div class="km-container">
+      <h2>Kehidupan Mahasiswa UCIC</h2>
+      <h3 class="km-intro" style="font-weight: normal;">
+        Mahasiswa mendapatkan pengalaman belajar yang relevan dengan kebutuhan
+        industri melalui proyek nyata, studi kasus, dan bimbingan praktisi,
+        sehingga siap menghadapi tantangan dunia kerja.
+      </h3>
+      <div class="km-grid">
+        <figure class="km-item km-item--auditorium">
+          <img src="assets/hero1.jpeg" alt="Auditorium kampus" loading="lazy" />
+          <figcaption>Auditorium</figcaption>
+        </figure>
+        <figure class="km-item km-item--rapat">
+          <img src="assets/hero2.jpeg" alt="Ruang rapat dan diskusi" loading="lazy" />
+          <figcaption>Ruang Rapat</figcaption>
+        </figure>
+        <figure class="km-item km-item--lab">
+          <img src="assets/hero3.jpeg" alt="Laboratorium komputer" loading="lazy" />
+          <figcaption>Lab. Komputer</figcaption>
+        </figure>
+        <figure class="km-item km-item--perpus">
+          <img src="assets/hero2.jpeg" alt="Perpustakaan kampus" loading="lazy" />
+          <figcaption>Perpustakaan</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <section class="jejak-prestasi" id="prestasi">
+    <div class="jp-container">
+      <header class="jp-header">
+        <h2>Jejak Prestasi & Inovasi</h2>
+        <h3 class="jp-intro" style="font-weight: normal;">
+          Prestasi adalah kebiasaan di UCIC. Kami bangga melihat mahasiswa,
+          dosen, dan alumni kami terus berinovasi dan menjadi juara di
+          bidangnya masing-masing. Berikut adalah beberapa kisah inspiratif
+          mereka.
+        </h3>
+      </header>
+      <div class="jp-grid">
+        <article class="jp-card">
+          <div class="jp-photo">
+            <img src="assets/hero1.jpeg"
+              alt="Penerima hibah penelitian mengembangkan energi alternatif dari limbah kopi" loading="lazy" />
+          </div>
+          <h4 class="jp-name">Arul Ganteng</h4>
+          <p class="jp-title">Peraih Hibah Penelitian Dikti</p>
+          <p class="jp-desc">
+            Meneliti pemanfaatan limbah kopi Cirebon sebagai sumber energi
+            alternatif ramah lingkungan.
+          </p>
+        </article>
+        <article class="jp-card">
+          <div class="jp-photo">
+            <img src="assets/hero2.jpeg" alt="Founder startup KopiKoding menerima pendanaan tahap awal"
+              loading="lazy" />
+          </div>
+          <h4 class="jp-name">Arul Ganteng</h4>
+          <p class="jp-title">Founder Startup KopiKoding</p>
+          <p class="jp-desc">
+            Meraih pendanaan tahap awal untuk platform edukasi yang kini
+            digunakan ribuan pelajar.
+          </p>
+        </article>
+        <article class="jp-card">
+          <div class="jp-photo">
+            <img src="assets/hero3.jpeg" alt="Peraih juara hackaton nasional mengembangkan aplikasi AI untuk pertanian"
+              loading="lazy" />
+          </div>
+          <h4 class="jp-name">Arul Ganteng</h4>
+          <p class="jp-title">Juara 1 Hackaton Nasional 2025</p>
+          <p class="jp-desc">
+            Mengembangkan aplikasi berbasis AI untuk membantu petani
+            memprediksi gagal panen.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="alumni-section">
+    <h2 class="alumni-title">Studi di Cirebon Bersama <span>UCIC</span></h2>
+
+    <div class="alumni-slider">
+      <!-- Slide 1 -->
+      <div class="alumni-slide active">
+        <div class="alumni-card">
+          <img src="./assets/guru-olahraga.png" alt="Alumni Photo" />
+          <div class="alumni-content">
+            <h3>Paket Komplit untuk Mahasiswa Perantau</h3>
+            <p>"Sempat ragu meninggalkan Bandung, tapi Cirebon ternyata pilihan terbaik. Kotanya nyaman bikin saya lebih
+              fokus belajar, biaya hidupnya sangat terjangkau, dan kualitas pendidikan di UCIC tetap juara. Benar-benar
+              paket komplit!"</p>
+            <strong>Arul Chan</strong>
+            <span>Manajemen Olahraga</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="alumni-slide">
+        <div class="alumni-card">
+          <img src="./assets/guru-olahraga.png" alt="Alumni Photo" />
+          <div class="alumni-content">
+            <h3>Lingkungan yang Mendukung</h3>
+            <p>"Belajar di UCIC memberikan saya pengalaman yang sangat berharga. Lingkungan kampusnya mendukung dan
+              dosennya sangat peduli dengan perkembangan mahasiswa."</p>
+            <strong>Sinta Dewi</strong>
+            <span>Akuntansi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="alumni-slide">
+        <div class="alumni-card">
+          <img src="./assets/guru-olahraga.png" alt="Alumni Photo" />
+          <div class="alumni-content">
+            <h3>Kesempatan Karir Terbuka</h3>
+            <p>"Berkuliah di UCIC membuka banyak kesempatan karir bagi saya. Kurikulumnya up-to-date dan banyak program
+              magang yang sangat membantu."</p>
+            <strong>Rizky Ramadhan</strong>
+            <span>Teknik Informatika</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <button class="prev" onclick="previousSlide()">&#10094;</button>
+      <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </section>
+
+
+  <section class="berita">
+    <div class="berita-header">
+      <h2><span class="highlight">UCIC</span> Hari Ini</h2>
+      <p>Langkah nyata dalam mewujudkan perubahan dan dampak yang lebih baik bagi masyarakat.</p>
+    </div>
+
+    <div class="berita-grid">
+      <!-- Berita Item 1 -->
+      <div class="berita-item large">
+        <div class="berita-img">
+          <img src="./assets/berita/berita1.png" alt="Berita 1">
+        </div>
+        <div class="berita-text">
+          <h3>Mahasiswa FTI UCIC Digitalisasi Puluhan UMKM Batik Cirebon</h3>
+          <p class="meta">2025-08-17 • 1 MIN READ</p>
+        </div>
+      </div>
+
+      <!-- Berita Item 2 -->
+      <div class="berita-item">
+        <div class="berita-img">
+          <img src="./assets/berita/berita2.png" alt="Berita 2">
+        </div>
+        <div class="berita-text">
+          <h3>Gelar Seminar Nasional UCIC Bahas Etika...</h3>
+          <p class="meta">2025-08-17 • 1 MIN READ</p>
+        </div>
+      </div>
+
+      <!-- Berita Item 3 -->
+      <div class="berita-item">
+        <div class="berita-img">
+          <img src="./assets/berita/berita3.png" alt="Berita 3">
+        </div>
+        <div class="berita-text">
+          <h3>Tim Basket Cendekia Warriors UCIC Juara...</h3>
+          <p class="meta">2025-08-17 • 1 MIN READ</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="berita-footer">
+      <a href="#" class="btn-berita">Semua Berita</a>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Siap Menjadi Bagian dari<br>Perjalanan Inovasi?</h2>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary">DAFTAR SEKARANG</a>
+      <a href="#" class="btn btn-primary">HUBUNGI ADMISI</a>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <!-- Left side -->
+      <div class="footer-left">
+        <div class="footer-logo">
+          <img src="./assets/footer/logo.png" alt="UCIC Logo">
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="https://mycic.cic.ac.id/" target="_blank" rel="noopener">Sistem Akademik Mahasiswa (MyCIC)</a>
+            </li>
+            <li><a href="https://simantu.cic.ac.id/" target="_blank" rel="noopener">Sistem Manajemen Mutu (SIMANTU
+                UCIC)</a></li>
+            <li><a href="https://elibrary.cic.ac.id/" target="_blank" rel="noopener">Perpustakaan (E-Library) CIC</a>
+            </li>
+            <li><a href="https://myebook.cic.ac.id/" target="_blank" rel="noopener">Sistem Repository eBook UCIC
+                (MYeBook)</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://sijali.lldikti4.id/" target="_blank" rel="noopener">Sistem Informasi Jabatan Akademik
+                Dosen LLDikti Wilayah IV</a></li>
+            <li><a href="https://lldikti4.kemdikbud.go.id/" target="_blank" rel="noopener">LLDIKTI Wilayah IV - Lembaga
+                Layanan Pendidikan Tingkat IV</a></li>
+            <li><a href="https://forlap.kemdikbud.go.id/" target="_blank" rel="noopener">Forlap Dikti</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <p>Jl. Kesambi No. 202, Drajat, Kesambi, Kota Cirebon, Jawa Barat 45133</p>
+          <p>Telp. +62 231-200418</p>
+          <p>Info PMB: +6289512314188</p>
+          <p>Email: info@cic.ac.id</p>
+        </div>
+      </div>
+
+      <!-- Right side -->
+      <div class="footer-right">
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="footer-rektorat">
+          <img src="./assets/footer/rektorat.png" alt="Rektorat UCIC">
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copy">
+      <p>© 2025 Universitas Catur Insan Cendekia - Team Pemuda Rindu Grage. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- Back To Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas" title="Kembali ke atas">
+    ▲
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
