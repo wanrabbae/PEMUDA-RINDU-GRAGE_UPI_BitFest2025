@@ -71,26 +71,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-// Back To Top button show when top-header tidak terlihat
-const backBtn = document.getElementById('backToTop');
-const topHeader = document.querySelector('.top-header');
-function toggleBackBtn() {
-  if (!backBtn || !topHeader) return;
-  const rect = topHeader.getBoundingClientRect();
-  // jika bawah top header sudah di atas viewport (rect.bottom < 0) maka tampilkan
-  if (rect.bottom < 0) {
-    backBtn.classList.add('show');
-  } else {
-    backBtn.classList.remove('show');
-  }
-}
-window.addEventListener('scroll', toggleBackBtn, { passive: true });
-window.addEventListener('load', toggleBackBtn);
-if (backBtn) {
-  backBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
+// Back To Top button removed (header sticky ensures easy navigation)
 
 // Animated counters
 function animateCounter(el, duration = 1500) {
@@ -189,14 +170,14 @@ if (filterButtons.length) {
           card.style.animation = '';
         }
       });
-      // optional: scroll into view if user jauh ke bawah
-      const grid = document.getElementById('programGrid');
-      if (grid) {
-        const rect = grid.getBoundingClientRect();
-        if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
-          grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
+      // // optional: scroll into view if user jauh ke bawah
+      // const grid = document.getElementById('programGrid');
+      // if (grid) {
+      //   const rect = grid.getBoundingClientRect();
+      //   if (rect.top < 0 || rect.top > window.innerHeight * 0.4) {
+      //     grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      //   }
+      // }
     });
   });
 }
@@ -244,51 +225,81 @@ if (!document.getElementById('tpKeyframes')) {
   });
 })();
 
+// ==================== Alumni Slider (Sliding Version) ====================
+(function initAlumniSlider() {
+  const track = document.querySelector('.alumni-track');
+  if (!track) return;
+  const slides = Array.from(track.children);
+  const prevBtn = document.querySelector('.alumni-nav.prev');
+  const nextBtn = document.querySelector('.alumni-nav.next');
+  let index = 0;
+  let autoTimer;
+  const AUTO_MS = 5000;
 
-// ==================== Alumni Slider ====================
-let alumniIndex = 1;
-const alumniSlides = document.querySelectorAll('.alumni-slide');
-const alumniPrev = document.querySelector('.alumni-section .prev');
-const alumniNext = document.querySelector('.alumni-section .next');
-let alumniInterval;
+  function go(to) {
+    const total = slides.length;
+    index = (to + total) % total;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    // visibility state
+    slides.forEach((s,i)=>{
+      if(i===index) s.classList.add('is-active'); else s.classList.remove('is-active');
+    });
+  }
 
-function showAlumniSlide(n) {
-  if (alumniSlides.length === 0) return;
+  function next() { go(index + 1); resetAuto(); }
+  function prev() { go(index - 1); resetAuto(); }
 
-  if (n > alumniSlides.length) alumniIndex = 1;
-  if (n < 1) alumniIndex = alumniSlides.length;
+  function startAuto() {
+    autoTimer = setInterval(() => go(index + 1), AUTO_MS);
+  }
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
 
-  alumniSlides.forEach(slide => slide.classList.remove('active'));
-  alumniSlides[alumniIndex - 1].classList.add('active');
-}
+  // Buttons
+  if (nextBtn) nextBtn.addEventListener('click', next);
+  if (prevBtn) prevBtn.addEventListener('click', prev);
 
-function nextAlumniSlide() {
-  alumniIndex++;
-  showAlumniSlide(alumniIndex);
-  resetAlumniInterval();
-}
+  // Swipe (basic)
+  let startX = 0;
+  let dragging = false;
+  track.addEventListener('pointerdown', e => {
+    dragging = true;
+    startX = e.clientX;
+    track.style.transition = 'none';
+  });
+  window.addEventListener('pointerup', e => {
+    if (!dragging) return;
+    dragging = false;
+    const diff = e.clientX - startX;
+    track.style.transition = '';
+    if (Math.abs(diff) > 60) {
+      diff < 0 ? next() : prev();
+    } else {
+      go(index); // snap back
+    }
+  });
+  window.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const diff = e.clientX - startX;
+    const percent = diff / track.clientWidth * 100;
+    track.style.transform = `translateX(calc(-${index * 100}% + ${percent}%))`;
+  });
 
-function previousAlumniSlide() {
-  alumniIndex--;
-  showAlumniSlide(alumniIndex);
-  resetAlumniInterval();
-}
+  // Keyboard
+  track.setAttribute('tabindex', '0');
+  track.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') { next(); }
+    else if (e.key === 'ArrowLeft') { prev(); }
+  });
 
-function autoAlumniSlide() {
-  alumniIndex++;
-  showAlumniSlide(alumniIndex);
-}
+  // Pause on hover
+  track.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  track.addEventListener('mouseleave', resetAuto);
 
-function resetAlumniInterval() {
-  clearInterval(alumniInterval);
-  alumniInterval = setInterval(autoAlumniSlide, 4000); // auto 4s
-}
-
-// Init Alumni Slider
-if (alumniSlides.length) {
-  showAlumniSlide(alumniIndex);
-  alumniInterval = setInterval(autoAlumniSlide, 4000);
-
-  if (alumniPrev) alumniPrev.addEventListener('click', previousAlumniSlide);
-  if (alumniNext) alumniNext.addEventListener('click', nextAlumniSlide);
-}
+  // Init
+  go(0);
+  startAuto();
+})();
+// ==================== End Alumni Slider ====================
