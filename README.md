@@ -7,7 +7,7 @@ Web ini merupakan hasil redesign dari website UCIC Cirebon (cic.ac.id). Redesign
 
 ### Screenshot Tampilan Website
 
-![Screenshot Tampilan Website 1](https://res.cloudinary.com/touchme/image/upload/v1755575753/Screenshot_2025-08-19_at_10.42.46_fk5ccm.png)
+![Screenshot Tampilan Website 1](https://res.cloudinary.com/touchme/image/upload/v1755576081/Screenshot_2025-08-19_at_10.42.46_zuvmxm.png)
 ![Screenshot Tampilan Website 2](https://res.cloudinary.com/touchme/image/upload/v1755575727/Screenshot_2025-08-19_at_10.43.23_bi2i2w.png)
 ![Screenshot Tampilan Website 3](https://res.cloudinary.com/touchme/image/upload/v1755575726/Screenshot_2025-08-19_at_10.43.11_bd7cit.png)
 
